@@ -15,7 +15,7 @@ const TitleSd = styled.span``;
 const YearSd = styled.span``;
 
 const MovieTeaser = ({ id, title, year }) => (
-	<LinkSd to={`/movies/${id}`}>
+	<LinkSd to={`/${id}`}>
 		<TitleSd>{title}</TitleSd>
 		<YearSd>{year}</YearSd>
 	</LinkSd>

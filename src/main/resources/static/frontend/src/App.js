@@ -1,11 +1,10 @@
 import React from 'react';
-import { Route, useLocation } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import mediaQueries from 'utils/MediaQueries';
 import Header from 'components/Header';
 import AddMovieWrapper from 'components/add/AddMovieWrapper';
 import MoviesWrapper from 'components/movies/MoviesWrapper';
-import MovieWrapper from 'components/movie/MovieWrapper';
 
 const AppSd = styled.div`
 	padding: 20px;
@@ -21,21 +20,13 @@ const AppSd = styled.div`
 `;
 
 function App() {
-	let location = useLocation();
 	return (
 		<AppSd>
 			<Header area="header"/>
-			{
-				location.pathname === '/movies/new' &&
-				<AddMovieWrapper area="left"/>
-			}
-			{
-				location.pathname !== '/movies/new' &&
-				<>
-					<MoviesWrapper area="left"/>
-					<Route path="/movies/:id" render={props => <MovieWrapper {...props} area="right"/>} />
-				</>
-			}
+			<Switch>
+				<Route path="/new" render={props => <AddMovieWrapper area="left" {...props} />} />
+				<Route path="/" render={props => <MoviesWrapper area="left" {...props} />} />
+			</Switch>
 		</AppSd>
 	);
 }

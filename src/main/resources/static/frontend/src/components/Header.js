@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import mediaQueries from 'utils/MediaQueries';
+import ButtonLink from 'components/general/ButtonLink';
 import Search from 'components/Search';
 
 const HeaderSd = styled.header`
@@ -16,21 +16,10 @@ const HeaderSd = styled.header`
 		background: ${props => props.theme.colors.headerBg};
 	`}
 `;
-const AddButtonSd = styled(Link)`
-	padding: .5rem 1rem;
-	text-decoration: none;
-	color: ${props => props.theme.colors.secondary};
-	background: ${props => props.theme.colors.button};
-	border: 2px solid ${props => props.theme.colors.border};
-	border-radius: 5px;
-	:active {
-		border: 2px solid ${props => props.theme.colors.borderFocused};
-	}
-`;
 
 const Header = ({ area }) => (
 	<HeaderSd area={area}>
-		<AddButtonSd to="/movies/new">Add Movie</AddButtonSd>
+		<ButtonLink to="/new">Add Movie</ButtonLink>
 		<Search/>
 	</HeaderSd>
 );

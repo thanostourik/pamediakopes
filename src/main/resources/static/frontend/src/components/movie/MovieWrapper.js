@@ -8,8 +8,10 @@ const MovieWrapper = ({ area, match }) => {
 	const [movie, setMovie] = useState(undefined);
 
 	useEffect(() => {
-		axios.get(`${MOVIES}/${match.params.id}`)
-			.then(res => setMovie(res.data));
+		if ( match.params.id ) {
+			axios.get(`${MOVIES}/${match.params.id}`)
+				.then(res => setMovie(res.data));
+		}
 	}, [match.params.id]);
 
 	if ( !movie ) return null;

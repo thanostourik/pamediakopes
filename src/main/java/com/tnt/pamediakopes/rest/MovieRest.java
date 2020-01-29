@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -46,7 +47,7 @@ public class MovieRest {
 	}
 
 	@PostMapping
-	public ResponseEntity<MovieDto> post(@RequestBody MovieDto dto) {
+	public ResponseEntity<MovieDto> post(@Valid @RequestBody MovieDto dto) {
 		Movie movie = TransformMovie.fromDto(dto);
 		movie = movieService.save(movie);
 		MovieDto created = TransformMovie.toDto(movie);

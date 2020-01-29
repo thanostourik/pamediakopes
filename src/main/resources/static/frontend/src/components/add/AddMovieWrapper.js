@@ -24,7 +24,7 @@ const MovieSchema = Yup.object().shape({
 		.max(new Date().getFullYear(), 'Wrong year')
 		.required("Year is required"),
 	description: Yup.string()
-		.min(2, 'Description is too short')
+		.min(50, 'Description should be at least 50 characters')
 		.required('Description is required')
 });
 

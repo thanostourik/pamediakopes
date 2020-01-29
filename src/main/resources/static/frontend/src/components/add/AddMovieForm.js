@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Form, Field } from 'formik';
 import InputField from 'components/general/InputField';
+import TextAreaField from 'components/general/TextAreaField';
 import ButtonLink from 'components/general/ButtonLink';
 
 const FormSd = styled(Form)`
@@ -49,10 +50,9 @@ const AddMovieForm = () => {
 				component={InputField}
 			/>
 			<Field
-				type="text"
 				name="description"
 				placeholder="Description"
-				component={InputField}
+				component={TextAreaField}
 			/>
 			<ButtonsContainerSd>
 				<AddButtonSd type="submit">Add Movie</AddButtonSd>

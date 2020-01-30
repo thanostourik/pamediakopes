@@ -6,13 +6,16 @@ import java.time.LocalDate;
 
 class PastYearImpl implements ConstraintValidator<PastYear, Integer> {
 
+	private Integer currentYear;
+
 	@Override
 	public void initialize(PastYear constraintAnnotation) {
+		this.currentYear = LocalDate.now().getYear();
 	}
 
 	@Override
 	public boolean isValid(Integer year, ConstraintValidatorContext context) {
 		if ( year == null ) return true;
-		return year <= LocalDate.now().getYear();
+		return year <= currentYear;
 	}
 }

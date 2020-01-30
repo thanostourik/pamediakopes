@@ -6,6 +6,11 @@ import com.tnt.pamediakopes.models.Movie;
 public class TransformMovie {
 
 	/**
+	 * Private constructor to hide implicit one
+	 */
+	private TransformMovie() {}
+
+	/**
 	 *
 	 * @param movie
 	 * @return

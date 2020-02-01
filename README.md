@@ -1,5 +1,6 @@
-## Pre-requisites
-- nodejs version 8 or later
+## Prerequisites
+- Java SDK v1.8 or higher
+- Node v8.10 or higher
 - yarn
 
 ## Preparations

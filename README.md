@@ -1,3 +1,8 @@
+## Overview
+A showcase application of a rest service implementing basic crud endpoints and a web interface.
+Backend is implemented using Spring Boot.
+Frontend is developed using ReactJs and bootstrapped with Create React App.
+
 ## Prerequisites
 - Java SDK v1.8 or higher
 - Node v8.10 or higher

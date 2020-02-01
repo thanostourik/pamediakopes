@@ -14,7 +14,7 @@ psql -h $PSQL_HOST -U $PSQL_USER $PSQL_DB < releases/initialize-database.sql
 ```
 - Change application.properties to reflect your database host, username, db name
 ```
-spring.datasource.url=jdbc:postgresql://localhost:5432/<postgresql_db>
+spring.datasource.url=jdbc:postgresql://<postgresql_host>:5432/<postgresql_db>
 spring.datasource.username=<postgresql_user>
 spring.datasource.password=<postgresql_password>
 ```

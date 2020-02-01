@@ -32,6 +32,7 @@ const TitleSd = styled(H2)`
 `;
 const DescriptionSd = styled(Paragraph)`
 	margin-bottom: ${props => props.theme.margins.small};
+	word-break: break-word;
 `;
 const DirectorSd = styled(Span)`
 	color: ${props => props.theme.colors.secondary};

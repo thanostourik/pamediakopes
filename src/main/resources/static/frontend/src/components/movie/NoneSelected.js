@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import mediaQueries from 'utils/MediaQueries';
 
 const NoneSelectedSd = styled.div`
+	display: none;
 	${mediaQueries.desktop`
 		height: 350px;
 		display: flex;

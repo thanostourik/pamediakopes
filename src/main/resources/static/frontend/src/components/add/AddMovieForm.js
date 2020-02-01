@@ -23,6 +23,7 @@ const AddButtonSd = styled.button`
 	border: 2px solid ${props => props.theme.colors.border};
 	border-radius: 5px;
 	cursor: pointer;
+	outline: 0;
 	:active {
 		border: 2px solid ${props => props.theme.colors.borderFocused};
 	}

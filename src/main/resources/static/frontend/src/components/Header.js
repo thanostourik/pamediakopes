@@ -8,24 +8,25 @@ import Search from 'components/Search';
 const HeaderSd = styled.header`
 	display: grid;
 	grid-template-columns: 114px auto;
+	padding: ${props => props.theme.paddings.small} ${props => props.theme.paddings.medium};
 	grid-gap: ${props => props.theme.margins.small};
+	background: ${props => props.theme.colors.headerBg};
 	${mediaQueries.desktop`
-		padding: ${props => props.theme.paddings.small} ${props => props.theme.paddings.medium};
 		grid-area: ${props => props.area ?? ''};
 		border-bottom: 2px solid ${props => props.theme.colors.divider};
-		background: ${props => props.theme.colors.headerBg};
 	`}
 `;
 
-const Header = ({ area }) => (
+const Header = ({ area, history }) => (
 	<HeaderSd area={area}>
 		<ButtonLink to="/new">Add Movie</ButtonLink>
-		<Search/>
+		<Search history={history} />
 	</HeaderSd>
 );
 
 Header.propTypes = {
-	area: PropTypes.string
+	area: PropTypes.string,
+	history: PropTypes.object.isRequired
 };
 
 export default Header;

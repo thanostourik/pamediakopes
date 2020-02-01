@@ -9,6 +9,7 @@ import closeImg from "img/close.png";
 
 const MovieSd = styled.div`
 	position: relative;
+	padding: ${props => props.theme.paddings.large};
 	${mediaQueries.desktop`
 		grid-area: ${props => props.area ?? ''};
 		padding: ${props => props.theme.paddings.large};
@@ -20,6 +21,7 @@ const CloseSd = styled(Link)`
     top: 2.2em;
     right: 2rem;
     width: 25px;
+    outline: 0;
 `;
 const CloseImgSd = styled.img`
 	width: 100%;
@@ -37,7 +39,7 @@ const DirectorSd = styled(Span)`
 
 const Movie = ({ area, title, description, director }) => (
 	<MovieSd area={area}>
-		<CloseSd to="/">
+		<CloseSd to={{pathname: "/", search: window.location.search}}>
 			<CloseImgSd src={closeImg} alt="close" />
 		</CloseSd>
 		<TitleSd>{title}</TitleSd>

@@ -8,6 +8,7 @@ const AddButtonSd = styled(Link)`
 	background: ${props => props.theme.colors.button};
 	border: 2px solid ${props => props.theme.colors.border};
 	border-radius: 5px;
+	outline: 0;
 	:active {
 		border: 2px solid ${props => props.theme.colors.borderFocused};
 	}

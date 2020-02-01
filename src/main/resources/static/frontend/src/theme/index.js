@@ -6,7 +6,10 @@ export default {
 		headerBg: "#f7f8fa",
 		button: "#fdfdfd",
 		border: "#EEEFF1",
-		borderFocused: "#ACCDDF"
+		borderFocused: "#ACCDDF",
+		hover: "#f7fbfd",
+		selected: "#e8f4f8",
+		selectedText: "#ffffff"
 	},
 	sizes: {
 		h2: "2rem",

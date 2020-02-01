@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import mediaQueries from 'utils/MediaQueries';
 import Header from 'components/Header';
@@ -7,7 +7,6 @@ import AddMovieWrapper from 'components/add/AddMovieWrapper';
 import MoviesWrapper from 'components/movies/MoviesWrapper';
 
 const AppSd = styled.div`
-	padding: 20px;
 	${mediaQueries.desktop`
 		width: 1200px;
 		padding:0;
@@ -20,9 +19,10 @@ const AppSd = styled.div`
 `;
 
 function App() {
+	const history = useHistory();
 	return (
 		<AppSd>
-			<Header area="header"/>
+			<Header area="header" history={history} />
 			<Switch>
 				<Route path="/new" render={props => <AddMovieWrapper area="left" {...props} />} />
 				<Route path="/" render={props => <MoviesWrapper area="left" {...props} />} />

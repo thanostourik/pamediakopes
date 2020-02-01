@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.tnt</groupId>
 	<artifactId>pamediakopes</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>pamediakopes</name>
 	<description>Exercise for Pamediakopes</description>
 

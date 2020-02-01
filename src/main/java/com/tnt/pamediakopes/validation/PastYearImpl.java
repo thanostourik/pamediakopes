@@ -4,7 +4,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.time.LocalDate;
 
-class PastYearImpl implements ConstraintValidator<PastYear, Integer> {
+public class PastYearImpl implements ConstraintValidator<PastYear, Integer> {
 
 	private Integer currentYear;
 

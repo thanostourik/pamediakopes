@@ -4,7 +4,7 @@
 
 ## Preparations
 - Create postgresql database
-- Change to project directory
+- Open new terminal and change to project directory
 - Run database initialization script
 ```
 PSQL_HOST=<postgresql_host>
@@ -23,16 +23,13 @@ spring.datasource.password=<postgresql_password>
 ### Package frontend and backend in one .jar
 - Open new terminal and change to project directory
 ```
-cd src/frontend
-yarn
-yarn build
-cd ../..
+cd src/frontend && yarn && yarn build && cd ../..
 ./mvnw package
 java -jar target/pamediakopes-0.0.1.jar
 ```
 - Access website at `localhost:8080`
 
-### Run frontend and backend separately
+### Development Build
 - Open new terminal and change to project directory
 ```
 cd src/frontend

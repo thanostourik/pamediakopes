@@ -8,17 +8,24 @@ import MoviesList from 'components/movies/MoviesList';
 import MovieWrapper from 'components/movie/MovieWrapper';
 import NoneSelected from 'components/movie/NoneSelected';
 
-const MoviesWrapper = ({ area, location, match }) => {
+const MoviesWrapper = ({ area, history, match }) => {
 	const [movies, setMovies] = useState([]);
 	const [showing, setShowing] = useState([]);
 
 	useEffect(() => {
 		axios.get(MOVIES)
-			.then(res => setMovies(res.data));
+			.then(res => {
+				if ( res.data?.length > 0 ) {
+					setMovies(res.data);
+				}
+				else {
+					history.push("/new");
+				}
+			});
 	}, []);
 
 	useEffect(() => {
-		const params = qs.parse(location.search);
+		const params = qs.parse(history.location.search);
 		if ( movies.length > 0 ) {
 			if ( !params?.q ) {
 				setShowing(movies);
@@ -27,7 +34,7 @@ const MoviesWrapper = ({ area, location, match }) => {
 				setShowing(movies.filter(movie => movie.title.toLowerCase().includes(params.q.toLocaleLowerCase())));
 			}
 		}
-	}, [movies, location.search]);
+	}, [movies, history.location.search]);
 
 	return (
 		<>
@@ -44,7 +51,7 @@ const MoviesWrapper = ({ area, location, match }) => {
 
 MoviesWrapper.propTypes = {
 	area: PropTypes.string,
-	location: PropTypes.object.isRequired,
+	history: PropTypes.object.isRequired,
 	match: PropTypes.object.isRequired
 };
 

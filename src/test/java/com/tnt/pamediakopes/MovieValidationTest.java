@@ -4,6 +4,7 @@ import com.tnt.pamediakopes.dto.MovieDto;
 import com.tnt.pamediakopes.utils.MovieDtoBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -13,6 +14,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+@SpringBootTest
 public class MovieValidationTest {
 
 	private Validator validator;

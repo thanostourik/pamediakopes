@@ -24,7 +24,7 @@ const MoviesWrapper = ({ area, location, match }) => {
 				setShowing(movies);
 			}
 			else {
-				setShowing(movies.filter(movie => movie.title.includes(params.q)));
+				setShowing(movies.filter(movie => movie.title.toLowerCase().includes(params.q.toLocaleLowerCase())));
 			}
 		}
 	}, [movies, location.search]);
